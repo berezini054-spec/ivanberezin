@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Студия Дизайна «Lacon» — Примеры работ</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fafaf9;
+  color: #1c1917;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== HEADER / ГЛАВНЫЙ ЭКРАН ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(145deg, #ffffff 0%, #f3f0eb 100%);
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #292524;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: #57534e;
+  max-width: 600px;
+  margin: 24px 0 40px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 36px;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: #292524;
+  color: #fafaf9;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.btn-primary:hover {
+  background: #44403c;
+  transform: scale(1.02);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #292524;
+  border: 1.5px solid #292524;
+}
+
+.btn-outline:hover {
+  background: #292524;
+  color: #fafaf9;
+}
+
+/* ===== СЕКЦИЯ ПОРТФОЛИО ===== */
+.portfolio {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  text-align: center;
+  color: #78716c;
+  margin-bottom: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.card {
+  background: #fafaf9;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  transition: transform 0.25s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  background: #e7e5e4;
+}
+
+.card-body {
+  padding: 20px 24px 28px;
+}
+
+.card-body h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.card-body p {
+  color: #57534e;
+  font-size: 0.95rem;
+}
+
+.card-tag {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #78716c;
+  background: #e7e5e4;
+  padding: 4px 14px;
+  border-radius: 40px;
+}
+
+/* ===== КОНТАКТЫ ===== */
+.contacts {
+  padding: 100px 0;
+  background: #f3f0eb;
+}
+
+.contact-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  margin-top: 48px;
+  justify-content: center;
+}
+
+.contact-item {
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+.contact-item .emoji {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.contact-item h4 {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.contact-item a {
+  color: #292524;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.contact-item a:hover {
+  border-bottom-color: #292524;
+}
+
+/* ===== ФУТЕР ===== */
+footer {
+  text-align: center;
+  padding: 40px 24px;
+  background: #292524;
+  color: #a8a29e;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #d6d3d1;
+  text-decoration: none;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  /* В мобильной версии карточки идут по одному в столбец */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ГЛАВНАЯ / ХЕРО -->
+<section class="hero" id="home">
+<div class="container">
+<h1>Lacon</h1>
+<p>Студия предметного дизайна и брендинга. Создаём узнаваемые визуальные решения для бизнеса с 2020 года.</p>
+<div class="hero-actions">
+<a href="#portfolio" class="btn btn-primary">Смотреть работы</a>
+<a href="#contacts" class="btn btn-outline">Связаться</a>
+</div>
+</div>
+</section>
+
+<!-- ПОРТФОЛИО / ПРИМЕРЫ РАБОТ -->
+<section class="portfolio" id="portfolio">
+<div class="container">
+<h2 class="section-title">Избранные проекты</h2>
+<p class="section-sub">Дизайн упаковки, айдентика, цифровые продукты и печатная графика</p>
+
+<div class="grid">
+
+<!-- карточка 1 -->
+<div class="card">
+<img class="card-img" src="IMG_20260613_000709_691.png" alt="Визитка «Lacon»" />
+<div class="card-body">
+<h3>Визитка «Lacon»</h3>
+<p>Айдентика для студии архитектурной визуализации. Логотип, шрифты, паттерны, мерч.</p>
+<span class="card-tag">брендинг</span>
+</div>
+</div>
+
+<!-- карточка 2 -->
+<div class="card">
+<img class="card-img" src="IMG_20260613_185251.jpg" alt="Разработка дизайна" />
+<div class="card-body">
+<h3>Разработка дизайна</h3>
+<p>Персонализированный дизайн: разработка идей и улучшение визуализации собственного продукта.</p>
+<span class="card-tag">дизайн продукта</span>
+</div>
+</div>
+
+<!-- карточка 3 -->
+<div class="card">
+<img class="card-img" src="IMG_20260613_191409_700.png" alt="Рекламная продукция" />
+<div class="card-body">
+<h3>Рекламная продукция</h3>
+<p>Разработка лендинга для стартапа в сфере зелёной энергетики. Печатная реклама.</p>
+<span class="card-tag">реклама</span>
+</div>
+</div>
+
+<!-- карточка 4 -->
+<div class="card">
+<img class="card-img" src="IMG_20260613_203013.jpg" alt="Каталог - меню" />
+<div class="card-body">
+<h3>Каталог - меню</h3>
+<p>Вёрстка и препресс каталога. Улучшение, ретушь, макетирование.</p>
+<span class="card-tag">печатная графика</span>
+</div>
+</div>
+
+<!-- карточка 5 -->
+<div class="card">
+<img class="card-img" src="IMG_20260613_185156_252.png" alt="Пригласительные" />
+<div class="card-body">
+<h3>Пригласительные</h3>
+<p>Разработка продукции для организации мероприятий. Визуальная организация мероприятий.</p>
+<span class="card-tag">организация мероприятий</span>
+</div>
+</div>
+
+<!-- карточка 6 -->
+<div class="card">
+<img class="card-img" src="IMG_20260613_002853_449.png" alt="Брендированная продукция" />
+<div class="card-body">
+<h3>Брендированная продукция</h3>
+<p>Фирменный стиль и наружная навигация: вывеска, меню, посуда, соцсети, офисные принадлежности.</p>
+<span class="card-tag">брендированная продукция</span>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- КОНТАКТЫ -->
+<section class="contacts" id="contacts">
+<div class="container">
+<h2 class="section-title">Контакты</h2>
+<p class="section-sub">Обсудим ваш проект — напишите любым удобным способом</p>
+
+<div class="contact-flex">
+
+<div class="contact-item">
+<span class="emoji">📧</span>
+<h4>Электронная почта</h4>
+<a href="mailto:lakonika.design@mail.ru">lakonika.design@mail.ru</a>
+</div>
+
+<div class="contact-item">
+<span class="emoji">📞</span>
+<h4>Телефон</h4>
+<a href="tel:+79994685606">+7 (999) 468-56-06</a>
+</div>
+
+<div class="contact-item">
+<span class="emoji">💬</span>
+<h4>Telegram</h4>
+<a href="https://t.me/berezinivan" target="_blank">@berezinivan</a>
+</div>
+
+<div class="contact-item">
+<span class="emoji">📍</span>
+<h4>Офис</h4>
+<p>Россия, Новосибирск</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ФУТЕР -->
+<footer>
+<div class="container">
+© 2026 Студия «Lacon» &nbsp;·&nbsp; <a href="#home">Наверх</a>
+</div>
+</footer>
+
+</body>
+</html>
